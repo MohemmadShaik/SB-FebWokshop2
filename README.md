@@ -1,4 +1,7 @@
-# SB-FebWokshop2
+# 🚀 3-Day Spring Boot Backend Workshop
+
+---
+## SB-FebWokshop2
 Building Ecommerce backend using Spring Boot Practical implementation of Real Rest APIs Spring Data JPA + MYSQL Docker + Cloud Deployment 
 
 
@@ -95,3 +98,111 @@ Swagger UI was initially returning:
 ## Status
 
 Day 1 REST APIs + Swagger Integration Completed Successfully ✅
+
+---
+
+## ✅ Day 1 – REST APIs + Exception Handling + Swagger
+
+### 🎯 Objective
+Understand and implement REST APIs using Spring Boot (Controller Layer Focus).
+
+---
+
+## 📌 Topics Covered
+
+### 1️⃣ REST Controller
+
+- Difference between `@Controller` and `@RestController`
+- Why `@RestController` is preferred for REST APIs
+- Layered architecture basics
+
+---
+
+### 2️⃣ HTTP Methods Implemented
+
+Base URL:
+```
+/api/v1
+```
+
+| Method | Endpoint | Description |
+|--------|----------|------------|
+| GET | `/hello` | Test endpoint |
+| POST | `/products` | Create product |
+| GET | `/products` | Get all products |
+| PUT | `/products/{id}` | Update product by ID |
+| DELETE | `/products/query?id=0` | Delete product using RequestParam |
+
+---
+
+### 3️⃣ PathVariable vs RequestParam
+
+- `@PathVariable` → used to extract value from URL path  
+  Example: `/products/{id}`
+
+- `@RequestParam` → used to extract query parameter  
+  Example: `/products/query?id=0`
+
+---
+
+### 4️⃣ Exception Handling
+
+Used:
+
+```java
+@RestControllerAdvice
+@ExceptionHandler(Exception.class)
+```
+
+Global exception handler to catch runtime errors and return custom error message.
+
+Example:
+
+```java
+@ExceptionHandler(Exception.class)
+public String handleException(Exception e){
+    return "An error occurred: " + e.getMessage();
+}
+```
+
+---
+
+### 5️⃣ Swagger Integration
+
+- Spring Boot 4.0.3
+- SpringDoc OpenAPI 3.0.1
+- Swagger UI available at:
+
+```
+http://localhost:8080/swagger-ui/index.html
+```
+
+---
+
+## 🧠 Key Learnings
+
+- REST is stateless
+- `@RestController = @Controller + @ResponseBody`
+- Difference between `@PathVariable` and `@RequestParam`
+- Basic CRUD endpoint structure
+- Centralized exception handling using `@RestControllerAdvice`
+- Maven Wrapper ensures consistent builds
+
+---
+
+## 🏁 Day 1 Status
+
+✔ Controller Layer Completed  
+✔ CRUD APIs Implemented  
+✔ Exception Handling Implemented  
+✔ Swagger Integrated
+
+---
+
+## 🔜 Day 2 – Spring Data JPA + MySQL
+
+- Entity Mapping
+- Repository Layer
+- Database Configuration
+- CRUD with Database
+- JPA Concepts
